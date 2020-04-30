@@ -1,0 +1,46 @@
+<%= stylesheet_link_tag "application.css" %>
+<div style="margin-left: 5%;">
+<h1>Sign Up</h1>
+   <% if flash[:notice1] %>
+      <div style="color: red;", class="notice">
+        <br/>
+        <%= flash[:notice1].html_safe %>
+        <br/>
+      </div>
+    <%end%>
+    <% if flash[:notice2] %>
+      <div style="color: red;", class="notice">
+        <br/>
+        <%= flash[:notice2].html_safe %>
+       <br/>
+     </div>
+   <% else %>
+     <p style="color: blue;">
+        Please, <br/>
+        use a long password (at least 12 characters),<br/>
+        include a symbol,<br/>
+        a number,<br/>
+        an uppercase letter,<br/>
+        and a lowercase letter.<br/>
+        Thank you!
+      </p>
+    <% end %>
+    <% if flash[:notice3] %>
+      <div style="color: red;", class="notice">
+        <br/>
+        <%= flash[:notice3].html_safe %>
+        <br/>
+      </div>
+    <% end %>
+
+<%= form_for @user do |f|%>
+  <%= f.label :username%><br>
+    <%= f.text_field :username%><br>  
+  <%= f.label :password%><br>  
+    <%= f.password_field :password%><br>
+  <%= f.label :CWID, 'CWID' %><br>
+    <%= f.text_field :CWID, maxlength: 8 %><br>   
+  <%= f.submit %>
+<%end%>
+<%= button_to "Back to Welcome", '/welcome', method: :get%>
+</div>

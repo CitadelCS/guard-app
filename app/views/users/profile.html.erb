@@ -1,0 +1,27 @@
+<%= stylesheet_link_tag "application.css" %>
+<h1><%= @username %>'s Profile</h1>
+
+<div style="color: red;", class="notice">
+    <%= flash[:notice] %>
+</div>
+
+<h2>Add Schedule here:</h2>
+<p>Copy and paste from CAS or Lesesne, please.</p>
+
+<%= form_tag '/users/add_schedule' do %>
+<table>
+    <tr>
+        <td>
+            <%= text_area_tag "schedule_field",nil, size: "150x10", placeholder: "#{@text_area_example}" %>
+        </td>
+    </tr>
+    <tr>
+        <td>
+        <br>
+            <%= submit_tag "Add Schedule"%>
+        </td>
+    </tr>
+</table>
+<%end%>
+<br>
+<%= button_to "Back to Welcome", '/welcome', method: :get%>

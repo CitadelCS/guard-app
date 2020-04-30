@@ -1,0 +1,63 @@
+<h1> Please Create Your Profile </h1>
+<%= render 'form' %>
+
+
+<%= form_with scope: :cadet, url: cadets_path, local: true do |f| %>
+
+    <p>
+        <%= f.label :First_Name %> <br/>
+        <%= f.text_field :F_NAME, maxlength: 20 %>
+    </p>
+
+    <p>
+        <%= f.label :Middle_Name %> <br/>
+        <%= f.text_field :M_INITIAL, maxlength: 1 %>
+    </p>
+
+    <p>
+        <%= f.label :Last_Name %> <br/>
+        <%= f.text_field :L_NAME, maxlength: 20 %>
+    </p>
+
+    <p>
+        <%= f.label :CWID, "CWID"%> <br/>
+        <%= f.label :Cadet_CWID, "#{current_user.CWID}" %> <br/>
+    </p>
+
+    <p>
+        <%= f.label :C_Status %> <br/>
+        <%= f.select :C_STATUS, ['Knob', 'Sophomore', 'Junior', 'Senior']%>
+    </p>
+
+    <p>
+        <%= f.label :Company %> <br/>
+        <%= f.select :CO_ID, ['Alpha', 'Bravo', 'Charlie', 'Delta', 'Echo', 'F-Troop', 'Golf', 'Hotel', 'India', 'Kilo', 'Lima', 'Mike', 'November', 'Oscar', 'Papa', 'Romeo', 'Sierra', 'Tango', 'Victor' 'Palmetto Battery', 'Band']%>
+    </p>
+
+    <p>
+        <%= f.label :Room_Number %> <br/>
+        <%= f.text_field :R_NUM, maxlength: 4 %>
+    </p>
+
+    <p>
+        <%= f.label :Phone_Number %> <br/>
+        <%= f.text_field :P_NUM %>
+    </p>
+
+    <p>
+        <%= f.label :Email, "Email Address" %> <br/>
+        <%= f.text_field :EMAIL %>
+    </p>
+
+    <p>
+        <%= f.label :RANK_ID, "Rank" %> <br/>
+        <%= f.select :RANK_ID, ["Private", "Corporal", "Sergeant", "Staff Sergeant", "Sergeant First Class", "Master Sergeant", "First Sergeant", "Sergeant Major", "Command Sergeant Major","Second Lieutenant", "First  Lieutenant", "Captain", "Major", "Lieutenant Colonel", "Colonel"] %>
+    </p>
+
+    <p>
+        <%= f.submit %>
+    </p>
+
+<% end %>
+
+<%= button_to "Back to Welcome", '/welcome', method: :get%>

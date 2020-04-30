@@ -2,12 +2,17 @@ source 'https://rubygems.org'
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 gem 'rails',      '6.0.2.1'
-gem 'puma',       '3.12.3'
+gem 'puma',       '3.12.2'
 gem 'sass-rails', '5.1.0'
 gem 'webpacker',  '4.0.7'
 gem 'turbolinks', '5.2.0'
 gem 'jbuilder',   '2.9.1'
 gem 'bootsnap',   '1.4.5', require: false
+gem 'bcrypt' ,    '>= 2.1.4'
+gem 'cucumber'
+gem 'rspec-rails'
+gem 'pundit'
+gem 'cancancan'
 
 group :development, :test do
   gem 'sqlite3', '1.4.1'
@@ -22,9 +27,15 @@ group :development do
 end
 
 group :test do
-  gem 'capybara',           '3.28.0'
-  gem 'selenium-webdriver', '3.142.4'
+  gem 'cucumber-rails', require: false
+  gem 'capybara',           '3.28.0' 
+  gem 'selenium-webdriver', '3.142.4' 
   gem 'webdrivers',         '4.1.2'
+  gem 'cucumber-rails-training-wheels', require: false
+  gem 'database_cleaner', require: false
+  gem 'simplecov', require: false
+  gem 'capybara-screenshot'
+  gem 'rspec-expectations'
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem

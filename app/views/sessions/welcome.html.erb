@@ -1,0 +1,33 @@
+
+<%= stylesheet_link_tag "application.css" %>
+
+<div>
+    <table>
+        <tr>
+            <th>
+                <h1>Welcome!</h1>
+            </th>
+            <th style="width: 60%;">
+            </th>
+            <th>
+               <%= @username  %>
+            </th>
+            
+            <th>
+                <%= button_to "Login", '/login', method: :get%>
+            </th>
+            <th>
+                <%= button_to "Sign Up", '/users/new', method: :get%>
+            </th>
+             <th>
+                <%= button_to "Logout", '/logout', method: :post%>
+            </th>
+            <th>
+                <%= button_to "Guard Schedule", '/cadets', method: :get%>
+            </th>
+            <th>
+                <%= button_to "User Profile", '/users/profile', method: :get%>
+            </th>
+        </tr>
+    </table>
+</div>
